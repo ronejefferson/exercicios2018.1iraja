@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Digite o valor 1</label>
+    <input type="text" name="valor" id="valor1"></input>
+    <label>Digite o valor 2</label>
+    <input type="text" name="valor" id="valor2"></input>
+    <label>Digite o valor 3</label>
+    <input type="text" name="valor" id="valor3"></input>
+    
+    <button onclick="nota()">ok</button>
+    <div id= "saida"></div>
+</body>
+</html>
+<script>
+    function nota(){
+        var v1 = parseInt(document.getElementById("valor1").value)
+        var v2 = parseInt(document.getElementById("valor2").value)
+        var v3 = parseInt(document.getElementById("valor3").value)
+      
+       maior = (v1 > v2) && (v1 > v3) 
+       
+        if  
+        (v1 > v2) { 
+            
+            document.getElementById("saida").innerHTML = "o aluno foi aprovado " + v1 ;
+        }
+        else (v1 < v2){
+            document.getElementById("saida").innerHTML = "o aluno não foi aprovado " + maior ;
+        }
+    }
+</script>
