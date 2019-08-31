@@ -1,2 +1,52 @@
-57) Escrever um algoritmo para ler três valores inteiros e escrever na tela o maior e o menor
-deles. Considere que todos os valores são diferentes.
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Responsivel para celular 'contribuição do steven jobs'-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--compativel para EDGE 'contribuição da microsoft'-->
+    <title>Aula:05-Ex.:59</title>
+</head>
+<body>
+    <labe>Nome 1º Professor:  </label>
+        <input type="text" name="nomeprof1" id="nomeprof1"><br><br>
+    <label>Valor Hora/Aula: </label>
+        <input type="text" name="valorprof1" id="valorprof1"><br><br>
+    <label> Quantidade de horas</label> 
+        <input type="text" name="qtdhoras1" id="qtdhoras1"><br><br>
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><br>
+    <labe>Nome 2º Professor:  </label>
+        <input type="text" name="nomeprof2" id="nomeprof2"><br><br>
+    <label>Valor Hora/Aula: </label>
+        <input type="text" name="valorprof2" id="valorprof2"><br><br>
+    <label> Quantidade de horas: </label> 
+        <input type="text" name="qtdhoras2" id="qtdhoras2"><br><br>
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><br>
+    <button onclick="calcularHora()">Calcular Valor Salario Total Maior</button> 
+    <div id="saida"></div>     
+</body>
+</html>
+<script>
+
+    function calcularHora () {
+
+        var nome1 = document.getElementById("nomeprof1").value
+        var v_h_a1 = parseFloat ((document.getElementById("valorprof1").value).replace(",","."))
+        var qtd_h1 = parseFloat ((document.getElementById("qtdhoras1").value).replace(",","."))
+        var nome2 = document.getElementById("nomeprof2").value
+        var v_h_a2 = parseFloat ((document.getElementById("valorprof2").value).replace(",","."))
+        var qtd_h2 = parseFloat ((document.getElementById("qtdhoras2").value).replace(",","."))
+
+        valor_total1 = v_h_a1 * qtd_h1
+        valor_total2 = v_h_a2 * qtd_h2
+
+        if (valor_total1 > valor_total2){
+            document.getElementById("saida").innerHTML = "O 1º professor(a) com nome de: "+nome1+" - Tem o maior salário" ;
+
+        }
+        else
+        
+        document.getElementById("saida").innerHTML = "O 2º  professor(a) com nome de: "+nome2+" - Tem o maior salário" ;
+
+        
+    }
+</script>

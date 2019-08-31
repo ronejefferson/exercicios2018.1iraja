@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!compatibilidade explorer>
+    <title>Aula:05-Ex.:65</title>
+    <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js></script>
+</head>
+<body ng-app="ex65"> 
+    <div ng-controller="ctrl65">
+    <label>Digite o valor do Salario: </label>
+    <input type="number" name="valor1" ng-model="valor1">
+    <br>
+    <label>Digite o valor do Financiamento: </label>
+    <input type="number" name="valor2" ng-model="valor2">
+    <br>
+    {{saida(valor1,valor2)}}
+</div>
+</body>
+</html>
+<script>
+    var app = angular.module("ex65",[])
+    app.controller("ctrl65",function($scope){
+        $scope.saida = function(v1,v2){
+           console.log(v1, " - ", v2 , " - ");
+           if (v2 <= (5 * v1)) {
+           return  "Financiamento concedido, obrigado por nos consultar"
+           }
+                return "Financiamento negado, obrigado por nos consultar"
+                }
+        })
+</script>

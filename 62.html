@@ -3,40 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!compatibilidade explorer>
+    <title>Aula:04-Ex.:62</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 </head>
-<body ng-app= "ex48">
-    <div ng-controller="ctrl48"> 
-    <label>Digite os valor1</label>
-    <input type="text" name="valor" ng-model="valor1"> <br/>
-    <label>Digite os valor2</label>
-    <input type="text" name="valor" ng-model="valor2"><br/>
-    <label>operação</label>
-    <select class="custom-select" id="operaçao">
-            <option></option>
-               <label>Selecione uma opção...</label>
-               <option value="1">Adição</option>
-               <option value="2">Subtritação</option>
-               <option value="3">multiplição</option>
-               
-        {{saida(valor) }} <br />
-    
-   
-    </div>
+<body ng-app="ex62"> 
+    <div ng-controller="ctrl62">
+    <label>Digite um Valor: </label>
+    <input type="number" name="valor1" ng-model="valor1">
+    <br>
+    <label>Digite um Valor: </label>
+    <input type="number" name="valor2" ng-model="valor2">
+    <br>
+          <label> Selecione a Operações Desejada: </label><br>
+          <select name="singleSelect" ng-model="operacao">
+            <option value=""></option>
+            <option value="1">Adição</option>
+            <option value="2">Subtração</option>
+            <option value="3">Multiplicação</option>
+            <option value="4">Divisão</option>
+          </select>
+          {{saida(valor1,valor2,operacao)}}
+</div>
 </body>
-
 </html>
- <script>
-   
- var app = angular.module ("ex48" , [])
-    app.controller("ctrl48",function ($scope){
-        $scope.saida = function(valor){
-            if ( value 1 = valor1 +valor2) {
-                return =  "valor1 + valor 2" ;
-            }
-           
+<script>
+    var app = angular.module("ex62",[])
+    app.controller("ctrl62",function($scope){
+        $scope.saida = function(v1,v2,op){
+           console.log(v1, " - ", v2 , " - ", op);
+           switch (op){
+                case "1": return v1 + v2; break;
+                case "2": return v1 - v2; break;
+                case "3": return v1 * v2; break;
+                case "4": return v1 / v2; break;
+           }
         }
     })
 </script>
